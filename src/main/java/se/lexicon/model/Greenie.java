@@ -7,10 +7,10 @@ public class Greenie implements Product {
     private double wight;
 
     public Greenie(int id, double price, String productName, double wight){
-        this.id = id;
-        this.price = price;
-        this.productName = productName;
-        this.wight = wight;
+        setId(id);
+        setPrice(price);
+        setProductName(productName);
+        setWight(wight);
     }
 
     @Override
@@ -53,5 +53,9 @@ public class Greenie implements Product {
 
     public double getWight() {
         return wight;
+    }
+
+    public void setWight(double wight) {
+        this.wight = wight;
     }
 }

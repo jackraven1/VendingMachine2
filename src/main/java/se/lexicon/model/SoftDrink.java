@@ -7,10 +7,10 @@ public class SoftDrink implements Product {
     private double size;
 
     public SoftDrink(int id, double price, String productName, double size){
-        this.id = id;
-        this.price = price;
-        this.productName = productName;
-        this.size = size;
+        setId(id);
+        setPrice(price);
+        setProductName(productName);
+        setSize(size);
     }
 
     @Override
@@ -53,5 +53,9 @@ public class SoftDrink implements Product {
 
     public double getSize() {
         return size;
+    }
+
+    public void setSize(double size) {
+        this.size = size;
     }
 }

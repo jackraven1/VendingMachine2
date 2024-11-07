@@ -7,10 +7,10 @@ public class Snus implements Product {
     private String flavor;
 
     public Snus(int id, double price, String productName, String flavor){
-        this.id = id;
-        this.price = price;
-        this.productName = productName;
-        this.flavor = flavor;
+        setId(id);
+        setPrice(price);
+        setProductName(productName);
+        setFlavor(flavor);
     }
 
     @Override
@@ -53,5 +53,9 @@ public class Snus implements Product {
 
     public String getFlavor() {
         return flavor;
+    }
+
+    public void setFlavor(String flavor) {
+        this.flavor = flavor;
     }
 }

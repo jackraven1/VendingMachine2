@@ -3,7 +3,7 @@ package se.lexicon;
 import se.lexicon.model.*;
 
 public class HappyMachine implements VendingMachine {
-    private Product[] products;
+    private final Product[] products;
     private int depositPool = 0;
 
     public HappyMachine(){
@@ -30,7 +30,7 @@ public class HappyMachine implements VendingMachine {
         for (Product product : products) {
             if (product != null && product.getId() == id) {
                 if (depositPool >= product.getPrice()) {
-                    depositPool -= product.getPrice();
+                    depositPool -= (int) product.getPrice();
                     return product;
                 } else {
                     System.out.println("add more money!");
