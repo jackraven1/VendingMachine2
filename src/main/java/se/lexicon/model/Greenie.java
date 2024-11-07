@@ -15,12 +15,12 @@ public class Greenie implements Product {
 
     @Override
     public String examine() {
-        return "";
+        return "Id: " + getId() + ", name:" + getProductName() + ", price:" + getPrice() + ", weight:" + getWight();
     }
 
     @Override
     public String use() {
-        return "Id: " + getId() + ", name:" + getProductName() + ", price:" + getPrice() + ", weight:" + getWight();
+        return "Enjoy your " + getWight() + " gram Broccoli!";
     }
 
     @Override

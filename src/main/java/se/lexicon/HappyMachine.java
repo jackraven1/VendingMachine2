@@ -27,73 +27,22 @@ public class HappyMachine implements VendingMachine {
 
     @Override
     public Product request(int id) {
-        switch(id){
-            case 1:
-                if(depositPool >= products[0].getPrice()){
-                    System.out.println(products[0].use());
-                    depositPool -= products[0].getPrice();
-                    break;
+        for (Product product : products) {
+            if (product != null && product.getId() == id) {
+                if (depositPool >= product.getPrice()) {
+                    depositPool -= product.getPrice();
+                    return product;
+                } else {
+                    System.out.println("add more money!");
+                    return null;
                 }
-                else{
-                    System.out.println("Add more money!");
-                }
-                break;
-            case 2:
-                if(depositPool >= products[1].getPrice()){
-                    System.out.println(products[1].use());
-                    depositPool -= products[1].getPrice();
-                    break;
-                }
-                else{
-                    System.out.println("Add more money!");
-                }
-                break;
-            case 3:
-                if(depositPool >= products[2].getPrice()){
-                    System.out.println(products[2].use());
-                    depositPool -= products[2].getPrice();
-                    break;
-                }
-                else{
-                    System.out.println("Add more money!");
-                }
-                break;
-            case 4:
-                if(depositPool >= products[3].getPrice()){
-                    System.out.println(products[3].use());
-                    depositPool -= products[3].getPrice();
-                    break;
-                }
-                else{
-                    System.out.println("Add more money!");
-                }
-                break;
-            case 5:
-                if(depositPool >= products[4].getPrice()){
-                    System.out.println(products[4].use());
-                    depositPool -= products[4].getPrice();
-                    break;
-                }
-                else{
-                    System.out.println("Add more money!");
-                }
-                break;
-            case 6:
-                if(depositPool >= products[5].getPrice()){
-                    System.out.println(products[5].use());
-                    depositPool -= products[5].getPrice();
-                    break;
-                }
-                else{
-                    System.out.println("Add more money!");
-                }
-                break;
-            default:
-                System.out.println("Product not found");
-                break;
+            }
         }
+        System.out.println("Product not found.");
         return null;
     }
+
+
 
     @Override
     public int endSession() {
