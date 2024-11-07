@@ -7,7 +7,7 @@ public class Main {
         HappyMachine machine = new HappyMachine();
         machine.addCurrency(Currency.FIVE);
         System.out.println(machine.getBalance());
-        machine.request(5);
+        machine.request(1);
         System.out.println("--------------");
         System.out.println(machine.getBalance());
         machine.endSession();

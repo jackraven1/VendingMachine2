@@ -31,6 +31,7 @@ public class HappyMachine implements VendingMachine {
             if (product != null && product.getId() == id) {
                 if (depositPool >= product.getPrice()) {
                     depositPool -= (int) product.getPrice();
+                    System.out.println(product.use());
                     return product;
                 } else {
                     System.out.println("add more money!");
